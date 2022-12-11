@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public Vector2 speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +19,13 @@ public class Movement : MonoBehaviour
         Vector2 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = (mouseScreenPosition - (Vector2)transform.position).normalized;
         transform.up = direction;
+
+        // Move Player with keyboard input
+        float inputX = Input.GetAxis("Horizontal");
+        float inputY = Input.GetAxis("Vertical");
+
+        Vector2 movement = new Vector2(speed.x * inputX, speed.y * inputY);
+        movement *= Time.deltaTime;
+        transform.Translate(movement, Space.World);
     }
 }
