@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public Vector2 speed;
+    public GameObject projectile;
 
     // Start is called before the first frame update
     void Start()
@@ -27,5 +28,9 @@ public class Movement : MonoBehaviour
         Vector2 movement = new Vector2(speed.x * inputX, speed.y * inputY);
         movement *= Time.deltaTime;
         transform.Translate(movement, Space.World);
+
+        // Fire projectile
+        if (Input.GetMouseButtonDown(0))
+            Instantiate(projectile, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
     }
 }
