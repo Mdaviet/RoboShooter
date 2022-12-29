@@ -5,7 +5,12 @@ using UnityEngine;
 public class EnemyPlaceHolder : MonoBehaviour
 {
     public Vector2 speed;
-    public Transform player;
+    GameObject player;
+
+    void Awake()
+    {
+        player = FindObjectOfType<PlayerCollisions>().gameObject;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +22,7 @@ public class EnemyPlaceHolder : MonoBehaviour
     void Update()
     {
         // Face the player
-        Vector2 direction = player.position - transform.position;
+        Vector2 direction = player.transform.position - transform.position;
         transform.up = direction;
 
         // Move forward perpetually
