@@ -26,6 +26,7 @@ public class PlayerCollisions : MonoBehaviour
             Debug.Log("You Lose!");
             //gameObject.GetComponent<GameManager>().GameOver();
             gameManager.GameOver();
+            // gameObject.SetActive(false);
         }
     }
 }
