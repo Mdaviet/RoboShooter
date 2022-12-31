@@ -28,6 +28,9 @@ public class ShootPlaceholder : MonoBehaviour
         {
             Destroy(collider.gameObject);
             Destroy(gameObject);
+            
+            GameManager manager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+            manager.Score();
         }
     }
 }
