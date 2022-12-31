@@ -24,7 +24,10 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        GameOverScreen.Setup(kills, timeSurvived);
+        int minutesSurvived = (int)timeSurvived / 60;
+        int secondsSurvived = (int)timeSurvived % 60;
+
+        GameOverScreen.Setup(kills, minutesSurvived, secondsSurvived);
         //gameObject.GetComponent<GameOverScreen>().Setup(kills, timeSurvived);
     }
 
