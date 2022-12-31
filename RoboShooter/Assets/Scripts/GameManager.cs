@@ -29,10 +29,24 @@ public class GameManager : MonoBehaviour
 
         GameOverScreen.Setup(kills, minutesSurvived, secondsSurvived);
         //gameObject.GetComponent<GameOverScreen>().Setup(kills, timeSurvived);
+
+        DeactivateObjects();
     }
 
     public void Score()
     {
         kills ++;
+    }
+
+    void DeactivateObjects()
+    {
+        GameObject.Find("Player").GetComponent<Movement>().enabled = false;
+        GameObject.Find("SpawnManager").GetComponent<SpawnManager>().enabled = false;
+        
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].GetComponent<EnemyPlaceHolder>().enabled = false;
+        }
     }
 }
