@@ -12,7 +12,12 @@ public class GameOverScreen : MonoBehaviour
     public void Setup(int kills, float timeSurvived)
     {
         gameObject.SetActive(true);
+        int minutesSurvived = (int)timeSurvived / 60;
+        int secondsSurvived = (int)timeSurvived % 60;
 
         killsText.text = "Kills: " + kills.ToString();
+        timeText.text = "Time Survived: " 
+                        + minutesSurvived.ToString() + ":" 
+                        + secondsSurvived.ToString("D2");
     }
 }
