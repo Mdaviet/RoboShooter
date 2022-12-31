@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerCollisions : MonoBehaviour
 {
+    public GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,8 @@ public class PlayerCollisions : MonoBehaviour
         {
             //Destroy(gameObject);
             Debug.Log("You Lose!");
+            //gameObject.GetComponent<GameManager>().GameOver();
+            gameManager.GameOver();
         }
     }
 }
