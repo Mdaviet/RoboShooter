@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2583056811939579404}
   - component: {fileID: 2583056811939579407}
   - component: {fileID: 2583056811939579392}
+  - component: {fileID: 2731634464778487780}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -137,3 +138,42 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2731634464778487780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2583056811939579393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.17694855, y: -0.13850117, z: 0}
+  - {x: -0.21374035, y: -0.07317066, z: 0}
+  - {x: -0.21758556, y: 0.00756979, z: 0}
+  - {x: -0.21758556, y: 0.09599972, z: 0}
+  - {x: -0.18079376, y: 0.16925955, z: 0}
+  - {x: -0.098397255, y: 0.22672224, z: 0}
+  - {x: -0.013812065, y: 0.23441172, z: 0}
+  - {x: 0.0784626, y: 0.2228775, z: 0}
+  - {x: 0.1461916, y: 0.17310429, z: 0}
+  - {x: 0.20534039, y: 0.11137867, z: 0}
+  - {x: 0.21302986, y: -0.003964424, z: 0}
+  - {x: 0.20534039, y: -0.084704876, z: 0}
+  - {x: 0.15003586, y: -0.15003538, z: 0}
+  - {x: 0.08615208, y: -0.20004845, z: 0}
+  - {x: -0.00996685, y: -0.20389318, z: 0}
+  - {x: -0.10224247, y: -0.18851423, z: 0}
+  m_ShapePathHash: 1382932741
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 35760
