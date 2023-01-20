@@ -13,13 +13,13 @@ public class ShootPlaceholder : MonoBehaviour
         GameObject player = GameObject.Find("Player");
         Vector2 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = (mouseScreenPosition - (Vector2)player.transform.position).normalized;
-        velocity = velocity * direction * speed * Time.deltaTime;
+        velocity = velocity * direction * speed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(velocity);
+        transform.Translate(velocity * Time.deltaTime);
     }
 
     void OnTriggerEnter2D(Collider2D collider)
