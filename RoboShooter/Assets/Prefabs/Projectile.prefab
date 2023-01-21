@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+  lifeTime: 3
 --- !u!58 &-3346210532431707072
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -6,6 +6,9 @@ public class EnemyPlaceHolder : MonoBehaviour
 {
     public Vector2 speed;
     GameObject player;
+    
+    [SerializeField] float lifeTime;
+    float timeAlive = 0f;
 
     void Awake()
     {
@@ -29,5 +32,9 @@ public class EnemyPlaceHolder : MonoBehaviour
         Vector2 movement = new Vector2(0, speed.y * 1);
         movement *= Time.deltaTime;
         transform.Translate(movement);
+
+        // Declutter
+        timeAlive += Time.deltaTime;
+        if (timeAlive > lifeTime) Destroy(gameObject);
     }
 }
