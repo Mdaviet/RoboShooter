@@ -5,7 +5,10 @@ using UnityEngine;
 public class ShootPlaceholder : MonoBehaviour
 {
     public int speed;
+    [SerializeField] int lifeTime;
+
     private Vector2 velocity = new Vector2(1, 1);
+    float timeAlive = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +23,9 @@ public class ShootPlaceholder : MonoBehaviour
     void Update()
     {
         transform.Translate(velocity * Time.deltaTime);
+
+        timeAlive += Time.deltaTime;
+        if (timeAlive > lifeTime) Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D collider)
