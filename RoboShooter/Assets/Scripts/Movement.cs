@@ -7,6 +7,9 @@ public class Movement : MonoBehaviour
     public Vector2 speed;
     public GameObject projectile;
 
+    [SerializeField] float fireRate;
+    float shotWait = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +33,12 @@ public class Movement : MonoBehaviour
         transform.Translate(movement, Space.World);
 
         // Fire projectile
-        if (Input.GetMouseButtonDown(0))
+        shotWait += Time.deltaTime;
+
+        if (Input.GetMouseButton(0) && shotWait >= fireRate)
+        {
             Instantiate(projectile, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            shotWait = 0f;
+        }
     }
 }
