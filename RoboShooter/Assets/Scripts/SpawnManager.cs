@@ -27,7 +27,7 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        Vector2 randomSpawn = new Vector2(Random.Range(-12, 12), Random.Range(-5,5));
+        Vector2 randomSpawn = new Vector2(Random.Range(-12, 12), Random.Range(-6,6));
         int randomSide = Random.Range(0,2);
 
         if (randomSide < 1)
@@ -37,8 +37,8 @@ public class SpawnManager : MonoBehaviour
         }
         else
         {
-            if (randomSpawn.y <= 0) randomSpawn.y -= (5 + randomSpawn.y);
-            else randomSpawn.y += (5 - randomSpawn.y);
+            if (randomSpawn.y <= 0) randomSpawn.y -= (6 + randomSpawn.y);
+            else randomSpawn.y += (6 - randomSpawn.y);
         }
 
         Instantiate(enemy, new Vector3(randomSpawn.x, randomSpawn.y, 0), Quaternion.identity);
