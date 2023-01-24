@@ -6,6 +6,7 @@ public class EnemyPlaceHolder : MonoBehaviour
 {
     public Vector2 speed;
     GameObject player;
+    UnityEngine.Rendering.Universal.Light2D spawnIndicator;
     
     [SerializeField] float lifeTime;
     float timeAlive = 0f;
@@ -13,6 +14,7 @@ public class EnemyPlaceHolder : MonoBehaviour
     void Awake()
     {
         player = FindObjectOfType<PlayerCollisions>().gameObject;
+        spawnIndicator = gameObject.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
     }
 
     // Start is called before the first frame update
@@ -24,6 +26,9 @@ public class EnemyPlaceHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Spawn flash
+        if (timeAlive > 0.15f) spawnIndicator.enabled = false;
+
         // Face the player
         Vector2 direction = player.transform.position - transform.position;
         transform.up = direction;
