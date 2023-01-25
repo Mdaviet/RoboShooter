@@ -5,7 +5,19 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject enemy;
+    public GameObject gameManager;
+    public AnimationCurve graph = new AnimationCurve();
+
     float wait;
+    int level;
+    float spawnRate;
+
+    GameManager gameManagerScript;
+
+    void Awake()
+    {
+        gameManagerScript = gameManager.GetComponent<GameManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -17,8 +29,11 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         wait += Time.deltaTime;
+        level = gameManagerScript.currentLevel;
+        spawnRate = Mathf.Pow(1.2f, level);
+        graph.AddKey(Time.realtimeSinceStartup, spawnRate);
 
-        if (wait >= 0.5)
+        if (wait >= (1 / spawnRate))
         {
             SpawnEnemy();
             wait = 0;

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameOverScreen GameOverScreen;
+    public int currentLevel = 0;
 
     int kills = 0;
     float timeSurvived = 0.0f;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         timeSurvived += Time.deltaTime;
+        currentLevel = (int)timeSurvived / 30;
     }
 
     public void GameOver()
