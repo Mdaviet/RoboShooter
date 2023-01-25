@@ -30,7 +30,7 @@ public class SpawnManager : MonoBehaviour
     {
         wait += Time.deltaTime;
         level = gameManagerScript.currentLevel;
-        spawnRate = Mathf.Pow(1.2f, level);
+        spawnRate = Mathf.Pow(1.1f, level);
         graph.AddKey(Time.realtimeSinceStartup, spawnRate);
 
         if (wait >= (1 / spawnRate))

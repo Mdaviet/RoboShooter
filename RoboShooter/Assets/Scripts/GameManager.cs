@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         timeSurvived += Time.deltaTime;
-        currentLevel = (int)timeSurvived / 30;
+        currentLevel = (int)timeSurvived / 10;
     }
 
     public void GameOver()
