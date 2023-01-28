@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     {
         GameObject.Find("Player").GetComponent<Movement>().enabled = false;
         GameObject.Find("SpawnManager").GetComponent<SpawnManager>().enabled = false;
+        GameObject.Find("Level Tracker").GetComponent<UIScreen>().enabled = false;
         
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         for (int i = 0; i < enemies.Length; i++)
